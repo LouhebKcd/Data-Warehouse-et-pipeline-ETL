@@ -1,0 +1,163 @@
+
+===========================
+           DL Queries
+===========================
+1.
+Question : 
+Quels sont les camions construits par Renault ayant une capacité de charge supérieure à 20 tonnes ?
+
+Requête :
+Camion and aPourConstructeur value Reanult and  aPourCapacitéEnTonne some xsd:int[>20]
+ 
+Résultat obtenu :
+Reanult_Kerax
+Reanult_Premium
+
+---
+
+2.
+Question :
+Quels camions appartenant à l'entreprise SARL_Djeha, utilisés pour le transport de marchandises, ont une capacité supérieure à 10 tonnes ?
+
+Requête : 
+Camion and appartientALentreprise value SARL_Djeha and estUtiliséPour value  Transport_Marchandise and aPourCapacitéEnTonne some xsd:int[>10]
+
+Résultat obtenu :
+DAF_XG
+Mercedes_Actros
+Scania_serie_L
+Volvo_FH
+
+
+---
+
+3.
+
+Question : 
+Quels sont les véhicules légers construits par Peugeot, équipés d'un moteur Diesel, avec une transmission manuelle, utilisés pour le transport de personnes ?
+
+Requête :
+VehiculeLeger and aPourConstructeur value Peugeot and aPourMoteur value Diesel and aPourTransmission value Transmission_Manuelle and estUtiliséPour value Transport_Personne
+
+Résultat obtenu :
+Peugeot_406
+Peugeot_308
+
+---
+
+===========================
+         SPARQL Queries
+===========================
+
+1.
+Question :
+Quels matériels appartenant à l'entreprise ETS_KACED sont utilisés sur quels chantiers, et qui sont les chauffeurs associés ?
+
+Requête :
+PREFIX vl: <http://www.semanticweb.org/kaced211/vehicules#>
+SELECT ?entreprise (?materiel AS ?Vehicule) ?chantier ?chauffeur
+WHERE {
+    ?materiel vl:appartientALentreprise ?entreprise .
+
+    OPTIONAL {
+        ?materiel vl:travailleSurChantier ?chantier .
+    }
+
+    OPTIONAL {
+        ?materiel vl:aPourChauffeur ?chauffeur .
+    }
+
+    FILTER(?entreprise = vl:ETS_KACED)
+}
+
+Résultat obtenu :
+entreprise: ETS_KACED | Vehicule: Renault_Premium | Chantier: Tramway_de_Caen | Chauffeur: Julien_Marchant
+entreprise: ETS_KACED | Vehicule: Iveco_Trakker | Chantier: Promotion_Immobilièr_Bretteville | Chauffeur: Xavier_Leclerc
+entreprise: ETS_KACED | Vehicule: Man_TGS | Chantier: CHU_de_Paris | Chauffeur: Aya_Kheyar
+entreprise: ETS_KACED | Vehicule: Pelleteuse_Hyundai_250 | Chantier: CHU_de_Paris | Chauffeur: Renais_Leroux
+entreprise: ETS_KACED | Vehicule: Renault_Kerax | Chantier: Tramway_de_Caen | Chauffeur: Louheb_Kaced
+entreprise: ETS_KACED | Vehicule: Mini_Pelle_Takeuchi_5.7T | Chantier: Tramway_de_Caen | Chauffeur: Ramzi_Aloui
+
+---
+
+2.
+Question :
+Afin de créer des offres de services , Quels sont les matériels de chaque entreprise, y compris le constructeur, l'usage prévu, le type de moteur et la capacité de charge en tonnes ?
+
+Requête :
+PREFIX vl: <http://www.semanticweb.org/kaced211/vehicules#>
+SELECT ?entreprise ?vehicule ?constructeur ?usage ?energie (STR(?capacite) AS ?capaciteDeChargeEnTonne)
+WHERE {
+  
+    ?vehicule rdf:type vl:VehiculeLourd .
+    ?vehicule vl:appartientALentreprise ?entreprise .
+
+    OPTIONAL {
+        ?vehicule vl:aPourConstructeur ?constructeur .
+    }
+    OPTIONAL {
+        ?vehicule vl:estUtiliséPour ?usage .
+    }
+
+    OPTIONAL {
+        ?vehicule vl:aPourMoteur ?energie .
+    }
+
+    OPTIONAL {
+        ?vehicule vl:aPourCapacitéEnTonne ?capacite .
+    }
+}
+ORDER BY ?entreprise
+
+Résultat obtenu :
+entreprise: ETS_KACED | vehicule: Renault_Premium | constructeur: Renault | usage: Levage | energie: Diesel | capaciteDeChargeEnT: "22"
+entreprise: ETS_KACED | vehicule: Iveco_Trakker | constructeur: Iveco | usage: Levage | energie: Diesel | capaciteDeChargeEnT: "18"
+entreprise: ETS_KACED | vehicule: Man_TGS | constructeur: MAN | usage: Transport_Marchandise | energie: Diesel | capaciteDeChargeEnT: "31"
+entreprise: ETS_KACED | vehicule: Pelleteuse_Hyundai_250 | constructeur: Hyundai | usage: Excavation | energie: Diesel | capaciteDeChargeEnT: -
+entreprise: ETS_KACED | vehicule: Renault_Kerax | constructeur: Renault | usage: Levage | energie: Diesel | capaciteDeChargeEnT: "30"
+entreprise: ETS_KACED | vehicule: Mini_Pelle_Takeuchi_5.7T | constructeur: Takeuchi | usage: Excavation | energie: Diesel | capaciteDeChargeEnT: -
+entreprise: SARL_Djeha | vehicule: Mercedes_Actros | constructeur: Mercedes | usage: Transport_Marchandise | energie: Diesel | capaciteDeChargeEnT: "30"
+entreprise: SARL_Djeha | vehicule: Volvo_FH | constructeur: Volvo | usage: Transport_Marchandise | energie: Diesel | capaciteDeChargeEnT: "40"
+entreprise: SARL_Djeha | vehicule: Scania_Serie_L | constructeur: Scania | usage: Transport_Marchandise | energie: Diesel | capaciteDeChargeEnT: "40"
+entreprise: SARL_Djeha | vehicule: DAF_XG | constructeur: DAF | usage: Transport_Marchandise | energie: Diesel | capaciteDeChargeEnT: "39"
+entreprise: SARL_Djeha | vehicule: Tracteur | constructeur: - | usage: Agriculture | energie: Essence | capaciteDeChargeEnT: "12"
+entreprise: SARL_Djeha | vehicule: Grue_Mobile_Liebher | constructeur: Liebher | usage: Levage | energie: Diesel | capaciteDeChargeEnT: -
+
+
+---
+
+3.
+Question :
+Quels sont les véhicules de chaque constructeur avec leurs caractéristiques (moteur, transmission et consommation) ?
+
+Requête :
+PREFIX vl: <http://www.semanticweb.org/kaced211/vehicules#>
+SELECT ?constructeur ?vehicule ?moteur ?transmission (STR(?consommation) AS ?consommationMoyenne)
+WHERE {
+
+    ?vehicule rdf:type vl:VehiculeLeger .
+    ?vehicule vl:aPourConstructeur ?constructeur .
+
+    OPTIONAL {
+        ?vehicule vl:aPourMoteur ?moteur .
+    }
+    OPTIONAL {
+        ?vehicule vl:aPourTransmission ?transmission .
+    }
+    OPTIONAL {
+        ?vehicule vl:aPourConsoMoyEnLitreAu100 ?consommation .
+    }
+}
+ORDER BY ?constructeur
+
+Résultat obtenu :
+entreprise: Ford | vehicule: Ford_Raptor | moteur: Essence | transmission: Transmission_Automatique | consommationMoyenne: "10.3"
+entreprise: Harley_Davidson | vehicule: Harley_Davidson_Fat_Bob | moteur: Diesel | transmission: Transmission_Semi_Automatique | consommationMoyenne: "4.2"
+entreprise: Peugeot | vehicule: Peugeot_308 | moteur: Hybrid | transmission: Transmission_Manuelle | consommationMoyenne: "4.6"
+entreprise: Peugeot | vehicule: Peugeot_406 | moteur: Diesel | transmission: Transmission_Manuelle | consommationMoyenne: "6.5"
+entreprise: Renault | vehicule: Renault_Clio | moteur: Electrique | transmission: Transmission_Automatique | consommationMoyenne: "3.6"
+entreprise: Toyota | vehicule: Toyota_Hilux | moteur: Diesel | transmission: Transmission_Manuelle | consommationMoyenne: "9.2"
+entreprise: Yamaha | vehicule: Yamaha_TMAX | moteur: Essence | transmission: Transmission_Semi_Automatique | consommationMoyenne: "4.3"
+
+
+---

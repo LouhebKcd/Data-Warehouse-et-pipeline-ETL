@@ -1,0 +1,1271 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kaced211/vehicules#"
+     xml:base="http://www.semanticweb.org/kaced211/vehicules"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kaced211/vehicules"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#aPourChauffeur -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#aPourChauffeur">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#aPourConstructeur -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#aPourConstructeur">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#aPourFondateur -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#aPourFondateur">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Entreprise"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#aPourMoteur -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#aPourMoteur">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Moteur"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#aPourPropriétaire -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#aPourPropriétaire">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#aPourTransmission -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#aPourTransmission">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#appartientALentreprise -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#appartientALentreprise">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Entreprise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#estUtiliséPour -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#estUtiliséPour">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Usage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#prisEnChargePar -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#prisEnChargePar">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Chantier"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Entreprise"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#travailleSurChantier -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#travailleSurChantier">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#utiliseVehicule"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Chantier"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#utiliseVehicule -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#utiliseVehicule">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Chantier"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#aPourCapacitéEnTonne -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#aPourCapacitéEnTonne">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#aPourConsoMoyEnLitreAu100 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/kaced211/vehicules#aPourConsoMoyEnLitreAu100">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Camion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Camion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#CamionABenne -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#CamionABenne">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#CamionGrue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#CamionGrue">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#CamionSemiRemorque -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#CamionSemiRemorque">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Chantier -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Chantier"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Citadine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Citadine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Constructeur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#DeuxRoues -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#DeuxRoues">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Engin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Engin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#EnginAgricole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#EnginAgricole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Engin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#EnginConstruction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#EnginConstruction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Engin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#EnginLevage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#EnginLevage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Engin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Entreprise -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Entreprise"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Moteur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Moteur"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Personne -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#PickUp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#PickUp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Transmission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Transmission"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Usage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Usage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Vehicule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Adel_Aloui -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Adel_Aloui">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Agriculture -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Agriculture">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Alain_Dupont -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Alain_Dupont">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Alexandre_Louis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Alexandre_Louis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Ali_Azou -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Ali_Azou">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Annah_Antoinnette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Annah_Antoinnette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Autoroute_A1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Autoroute_A1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Chantier"/>
+        <prisEnChargePar rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Aya_Kheyar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Aya_Kheyar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#CHU_de_Paris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#CHU_de_Paris">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Chantier"/>
+        <prisEnChargePar rdf:resource="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED"/>
+        <prisEnChargePar rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Citroen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Citroen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Construction -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Construction">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#DAF -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#DAF">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#DAF_XG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#DAF_XG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CamionSemiRemorque"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Alexandre_Louis"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#DAF"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Marchandise"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CHU_de_Paris"/>
+        <aPourCapacitéEnTonne rdf:datatype="http://www.w3.org/2001/XMLSchema#int">39</aPourCapacitéEnTonne>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">48.3</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Diesel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Diesel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Moteur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#ETS_KACED -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Entreprise"/>
+        <aPourFondateur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Electrique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Electrique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Moteur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Essence -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Essence">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Moteur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Excavation -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Excavation">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Farouk_Medjbar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Farouk_Medjbar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Ford -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Ford">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Ford_Raptor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Ford_Raptor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#PickUp"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Ford"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Essence"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Rayane_Bellahsene"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Automatique"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Marchandise"/>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.3</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#GDO_Dépannage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#GDO_Dépannage"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Grue_Mobile_Liebher -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Grue_Mobile_Liebher">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Engin"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#EnginLevage"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Farouk_Medjbar"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Liebher"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Levage"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Promotion_Immobilier_Bretteville"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Harley_Davidson -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Harley_Davidson">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Harley_Davidson_Fat_Bob -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Harley_Davidson_Fat_Bob">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#DeuxRoues"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Harley_Davidson"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Aya_Kheyar"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Semi_Automatique"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Personne"/>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.2</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Hybrid -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Hybrid">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Moteur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Hyundai -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Hyundai">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Iveco -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Iveco">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Iveco_Trakker -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Iveco_Trakker">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CamionGrue"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Xavier_Leclerc"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Iveco"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Semi_Automatique"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Levage"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Promotion_Immobilier_Bretteville"/>
+        <aPourCapacitéEnTonne rdf:datatype="http://www.w3.org/2001/XMLSchema#int">18</aPourCapacitéEnTonne>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">26.1</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Julien_Marchant -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Julien_Marchant">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Kawazaki -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Kawazaki">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Levage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Levage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Liebher -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Liebher">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Louheb_Kaced -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Louheb_Kaced">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Reanult"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Lyes_Ouamara -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Lyes_Ouamara">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#MAN -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#MAN">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Man_TGS -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Man_TGS">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CamionSemiRemorque"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Aya_Kheyar"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#MAN"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Semi_Automatique"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Marchandise"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CHU_de_Paris"/>
+        <aPourCapacitéEnTonne rdf:datatype="http://www.w3.org/2001/XMLSchema#int">31</aPourCapacitéEnTonne>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">58.0</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Massinissa_Maouche -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Massinissa_Maouche">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Mercedes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Mercedes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Mercedes_Actros -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Mercedes_Actros">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CamionABenne"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Annah_Antoinnette"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Mercedes"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Automatique"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Marchandise"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Autoroute_A1"/>
+        <aPourCapacitéEnTonne rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</aPourCapacitéEnTonne>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">38.9</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Mini_Pelle_Takeuchi_5.7T -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Mini_Pelle_Takeuchi_5.7T">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#EnginConstruction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Ramzi_Aloui"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Takeuchi"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Excavation"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Tramway_de_Caen"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Pelleteuse_Hyundai_250 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Pelleteuse_Hyundai_250">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#EnginConstruction"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Vehicule"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Renais_leroux"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Hyundai"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Excavation"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CHU_de_Paris"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Peugeot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Peugeot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Peugeot_308 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Peugeot_308">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Citadine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Peugeot"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Personne"/>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.6</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Peugeot_406 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Peugeot_406">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Citadine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Peugeot"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Louheb_Kaced"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Personne"/>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">6.5</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Promotion_Immobilier_Bretteville -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Promotion_Immobilier_Bretteville">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Chantier"/>
+        <prisEnChargePar rdf:resource="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED"/>
+        <prisEnChargePar rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Rafik_Halit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Rafik_Halit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Ramzi_Aloui -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Ramzi_Aloui">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Rayane_Bellahsene -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Rayane_Bellahsene">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Reanult -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Reanult">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Renais_leroux -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Renais_leroux">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Roger"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Essence"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Automatique"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Agriculture"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Renault_Clio -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Renault_Clio">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Citadine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Reanult"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Electrique"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Rafik_Halit"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Automatique"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Personne"/>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.6</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Renault_Kerax -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Renault_Kerax">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CamionGrue"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Louheb_Kaced"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Reanult"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Levage"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Tramway_de_Caen"/>
+        <aPourCapacitéEnTonne rdf:datatype="http://www.w3.org/2001/XMLSchema#int">30</aPourCapacitéEnTonne>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">44.8</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Renault_Premium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Renault_Premium">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CamionGrue"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Julien_Marchant"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Reanult"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Semi_Automatique"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Levage"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Tramway_de_Caen"/>
+        <aPourCapacitéEnTonne rdf:datatype="http://www.w3.org/2001/XMLSchema#int">22</aPourCapacitéEnTonne>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">44.0</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Riad_Oulmahdi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Riad_Oulmahdi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Roger -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Roger">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Entreprise"/>
+        <aPourFondateur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Samir_Mokrani -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Samir_Mokrani">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Scania -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Scania">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Scania_Serie_L -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Scania_Serie_L">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CamionABenne"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Scania"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Marchandise"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Autoroute_A1"/>
+        <aPourCapacitéEnTonne rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</aPourCapacitéEnTonne>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29.3</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Syphax_Fennouch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Syphax_Fennouch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Takeuchi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Takeuchi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Terex -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Terex">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Toyota -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Toyota">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Toyota_Hilux -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Toyota_Hilux">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#PickUp"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Toyota"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Kaced_Mohand_Ouidir"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Personne"/>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.2</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Tracteur -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Tracteur">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Engin"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#EnginAgricole"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourChauffeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Adel_Aloui"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Essence"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Automatique"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Agriculture"/>
+        <aPourCapacitéEnTonne rdf:datatype="http://www.w3.org/2001/XMLSchema#int">12</aPourCapacitéEnTonne>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Tramway_de_Caen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Tramway_de_Caen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Chantier"/>
+        <prisEnChargePar rdf:resource="http://www.semanticweb.org/kaced211/vehicules#ETS_KACED"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Transmission_Automatique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Transmission_Automatique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Transmission_Manuelle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Transmission_Semi_Automatique -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Transmission_Semi_Automatique">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Transport_Marchandise -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Transport_Marchandise">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Transport_Personne -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Transport_Personne">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Usage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Volvo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Volvo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Volvo_FH -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Volvo_FH">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Camion"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#CamionABenne"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLourd"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Volvo"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Diesel"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah"/>
+        <appartientALentreprise rdf:resource="http://www.semanticweb.org/kaced211/vehicules#SARL_Djeha"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Marchandise"/>
+        <travailleSurChantier rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Autoroute_A1"/>
+        <aPourCapacitéEnTonne rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</aPourCapacitéEnTonne>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">36.6</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Wassim_Djeha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Wassim_Djeha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#XCMG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#XCMG">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Xavier_Leclerc -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Xavier_Leclerc">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Personne"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Yamaha -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Yamaha">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Constructeur"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#Yamaha_TMAX -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#Yamaha_TMAX">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#DeuxRoues"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kaced211/vehicules#VehiculeLeger"/>
+        <aPourConstructeur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Yamaha"/>
+        <aPourMoteur rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Essence"/>
+        <aPourPropriétaire rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Djeha_Abdellah"/>
+        <aPourTransmission rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transmission_Semi_Automatique"/>
+        <estUtiliséPour rdf:resource="http://www.semanticweb.org/kaced211/vehicules#Transport_Personne"/>
+        <aPourConsoMoyEnLitreAu100 rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.3</aPourConsoMoyEnLitreAu100>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#10_Tonnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#10_Tonnes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#10_tonnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#10_tonnes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#10_kwh/100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#10_kwh/100"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#11_l/100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#11_l/100"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#15_kwh/100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#15_kwh/100"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#20_Tonnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#20_Tonnes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#20_tonnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#20_tonnes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#22_l/100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#22_l/100"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#25_Tonnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#25_Tonnes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#30_tonnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#30_tonnes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#35_l/100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#35_l/100"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#40_Tonnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#40_Tonnes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#40_tonnes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#40_tonnes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#40_l/100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#40_l/100"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#4_l/100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#4_l/100"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#700_KG -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#700_KG"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kaced211/vehicules#8_l/100 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kaced211/vehicules#8_l/100"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
